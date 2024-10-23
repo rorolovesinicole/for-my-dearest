@@ -72,16 +72,16 @@ const emissiveColor = new Color("orange");
 
 const pageMaterials = [
   new MeshStandardMaterial({
-    color: whiteColor,
+    color: new Color("#f4e4bc"), // Warm vintage paper color
   }),
   new MeshStandardMaterial({
     color: "#111",
   }),
   new MeshStandardMaterial({
-    color: whiteColor,
+    color: new Color("#f4e4bc"), // Warm vintage paper color
   }),
   new MeshStandardMaterial({
-    color: whiteColor,
+    color: new Color("#f4e4bc"), // Warm vintage paper color
   }),
 ];
 
@@ -100,6 +100,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
       : []),
   ]);
   picture.colorSpace = picture2.colorSpace = SRGBColorSpace;
+  
   const group = useRef();
   const turnedAt = useRef(0);
   const lastOpened = useRef(opened);
@@ -125,7 +126,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
     const materials = [
       ...pageMaterials,
       new MeshStandardMaterial({
-        color: whiteColor,
+        color: new Color("#f4e4bc"), // Warm vintage paper color
         map: picture,
         ...(number === 0
           ? {
@@ -138,7 +139,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
         emissiveIntensity: 0,
       }),
       new MeshStandardMaterial({
-        color: whiteColor,
+        color: new Color("#dac8ac"), // Warm vintage paper color
         map: picture2,
         ...(number === pages.length - 1
           ? {
