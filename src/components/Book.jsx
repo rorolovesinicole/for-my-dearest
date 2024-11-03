@@ -139,7 +139,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
         emissiveIntensity: 0,
       }),
       new MeshStandardMaterial({
-        color: new Color("#dac8ac"), // Warm vintage paper color
+        color: new Color("#f4e4bc"), // Warm vintage paper color
         map: picture2,
         ...(number === pages.length - 1
           ? {
